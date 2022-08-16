@@ -15,7 +15,7 @@ func (c *Client) GetAllDomains(authToken *string) (*[]Domain, error) {
 		return nil, err
 	}
 
-	body, err := c.doRequest(req, authToken)
+	body, err := c.doRequest(req)
 	if err != nil {
 		return nil, err
 	}
@@ -36,7 +36,7 @@ func (c *Client) GetDomain(DomainID string, authToken *string) (*Domain, error) 
 		return nil, err
 	}
 
-	body, err := c.doRequest(req, authToken)
+	body, err := c.doRequest(req)
 	if err != nil {
 		return nil, err
 	}
@@ -62,7 +62,7 @@ func (c *Client) CreateDomain(DomainItems []DomainItem, authToken *string) (*Dom
 		return nil, err
 	}
 
-	body, err := c.doRequest(req, authToken)
+	body, err := c.doRequest(req)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (c *Client) UpdateDomain(DomainID string, DomainItems []DomainItem, authTok
 		return nil, err
 	}
 
-	body, err := c.doRequest(req, authToken)
+	body, err := c.doRequest(req)
 	if err != nil {
 		return nil, err
 	}
@@ -109,7 +109,7 @@ func (c *Client) DeleteDomain(DomainID string, authToken *string) error {
 		return err
 	}
 
-	body, err := c.doRequest(req, authToken)
+	body, err := c.doRequest(req)
 	if err != nil {
 		return err
 	}
